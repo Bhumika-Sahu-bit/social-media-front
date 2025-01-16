@@ -27,7 +27,7 @@ export const UserForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users",
+        "https://social-media-back-l595.onrender.com/api/users",
         formDataObj
       );
       alert("Data submitted successfully!", response.data);

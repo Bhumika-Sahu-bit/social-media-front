@@ -31,9 +31,12 @@ export const AdminDashboard = () => {
     const fetchSubmissions = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:5000/api/users", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "https://social-media-back-l595.onrender.com/api/users",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         const groupedSubmissions = groupSubmissions(response.data);
         setSubmissions(groupedSubmissions);
         setLoading(false);
