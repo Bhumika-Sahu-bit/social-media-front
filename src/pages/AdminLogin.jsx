@@ -17,12 +17,14 @@ export const AdminLogin = () => {
         }
       );
 
+      console.log(response);
       // On successful login, store the token and navigate to the admin dashboard
       const { token } = response.data;
       localStorage.setItem("token", token);
       alert(`Welcome, ${username}!`);
       navigate("/admin");
     } catch (error) {
+      console.error(error);
       alert(error.response?.data?.message || "Login failed. Please try again.");
     }
   };
